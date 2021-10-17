@@ -9,6 +9,7 @@ target 'FirebaseTalk' do
 
 	pod 'SnapKit', '~> 5.0.0'
 
+	pod 'Firebase/Analytics'
 	pod 'Firebase/Auth'
 	pod 'Firebase/RemoteConfig'
 	pod 'Firebase/Database'
