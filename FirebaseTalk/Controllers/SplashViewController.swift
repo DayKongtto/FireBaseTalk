@@ -48,8 +48,6 @@ class SplashViewController: UIViewController {
         let caps = remoteConfig["splash_message_cap"].boolValue
         let message = remoteConfig["splash_message"].stringValue
         
-        print("color : \(color)")
-        
         if(caps) {
             let alert = UIAlertController(title: "공지사항", message: message, preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: { (action) in
@@ -58,9 +56,14 @@ class SplashViewController: UIViewController {
             
             self.present(alert, animated: true, completion: nil)
             
-            if let backColor: String = color {
-                self.view.backgroundColor = UIColor(hex: backColor)
-            }
+        } else {
+            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            
+            self.present(loginVC, animated: false, completion: nil)
+        }
+        
+        if let backColor: String = color {
+            self.view.backgroundColor = UIColor(hex: backColor)
         }
     }
 }

@@ -14,4 +14,6 @@ target 'FirebaseTalk' do
 	pod 'Firebase/RemoteConfig'
 	pod 'Firebase/Database'
 
+	pod 'TextFieldEffects'
+
 end
